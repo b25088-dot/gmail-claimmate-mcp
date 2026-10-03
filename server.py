@@ -40,4 +40,15 @@ def send_email(to: str, subject: str, body: str) -> dict:
         "message": "Email tool connected successfully."
     }
 
-app = mcp.streamable_http_app()
+security = TransportSecuritySettings(
+    allowed_hosts=[
+        "gmail-claimmate-mcp.vercel.app",
+        "gmail-claimmate-mcp.vercel.app:*"
+    ]
+)
+
+app = mcp.streamable_http_app(
+    json_response=True,
+    stateless_http=True,
+    transport_security=security
+)
