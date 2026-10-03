@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 
 app = FastAPI()
-mcp = FastMCP("ClaimMate Gmail")
+mcp = MCPServer("ClaimMate Gmail")
 
 @mcp.tool()
 def search_emails(query: str) -> dict:
