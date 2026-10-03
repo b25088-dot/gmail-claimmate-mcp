@@ -40,4 +40,4 @@ def send_email(to: str, subject: str, body: str) -> dict:
         "message": "Email tool connected successfully."
     }
 
-app.mount("/mcp", mcp.streamable_http_app())
+app = mcp.streamable_http_app()
